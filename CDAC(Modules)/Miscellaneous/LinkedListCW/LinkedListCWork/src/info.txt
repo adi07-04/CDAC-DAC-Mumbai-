@@ -1,0 +1,8 @@
+reverse Linked List
+find middle of list
+Remove from given index
+addFirst ,
+AddLast,
+RemoveFirst,
+RemoveLast
+,Add at given Index
