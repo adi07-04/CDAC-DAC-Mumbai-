@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function fetchData(URL, fetch) {
+        console.log('Fetching URL.....');
+
+        fetch(URL);
+    }
+
+    fetchData('www.data.com', (url) => {
+        if (url) {
+            setTimeout(() => {
+                console.log(url);
+                setTimeout(()=>{
+                    ProcessData(url)
+                },1000)
+            }, 1000);
+        }else{
+            console.log(new Error('URL unreachable'));
+        }
+    });
+    function ProcessData(data){
+        console.log('Processing data....');
+        setTimeout(() => {
+            console.log('Processed data:',data);
+        }, 1000);
+    }
+
+
+</script>
+
+</html>

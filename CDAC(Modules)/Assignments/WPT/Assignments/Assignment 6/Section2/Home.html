@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Tracker</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <div id="navbar">
+     
+            <div id="inner">
+                <li type="none">Tracaker</li>
+                <li type="none">Login</li>
+            </div>
+      
+    </div>
+    
+    <div id="form-container">
+        <h3>Add Expenditure</h3>
+        <form action="" id="form">
+            <input type="number" id="Amount" placeholder="Amount" required>
+            <input type="text" id="desc" placeholder="Description" required>
+            <input type="submit" id="submit" value = 'Add'>
+        </form>
+    </div>
+
+    <div id="tracker">
+        <table>
+            <thead>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Time</th>
+            </thead>
+            <tbody id="table-body">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h3 id="Total"></h3>   
+    </div>
+    
+</body>
+<script src="Home.js"></script>
+</html>

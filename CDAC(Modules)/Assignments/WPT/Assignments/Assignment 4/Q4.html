@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function fetchData(URL, fetch) {
+        console.log('Fetching URL.....');
+
+        fetch(URL);
+    }
+
+    fetchData('www.data.com', (url) => {
+        if (url) {
+            setTimeout(() => {
+                console.log(url);
+            }, 2000);
+        }else{
+            console.log(new Error('URL unreachable'));
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+      
+        .container {
+            /* width: 300px; */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+       
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+       
+        .output p {
+            font-size: 1em;
+            color: #000000;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <form>
+                <input type="text" id="Name" placeholder="Enter Name">
+                <input type="text" id="contact" placeholder="Enter Contact">
+                <input type="text" id="email" placeholder="Enter email">
+                <!-- <input type="submit" onclick="getdetails()"> -->
+                <button onclick="getdetails()">Submit</button>
+            </form>
+        </div>
+        <div>
+            <p id="on"></p>
+            <p id="oc"></p>
+            <p id="oe"></p>
+        </div>
+    </div>
+</body>
+<script>
+   
+    function getdetails(){
+        event.preventDefault();
+         name = document.getElementById("Name").value;
+         contact = document.getElementById("contact").value;
+         email = document.getElementById("email").value;
+        
+        document.getElementById('on').innerHTML = `<strong> Name: ${name} </strong>`;
+        document.getElementById('oc').innerHTML = `<strong> Contact: ${contact} </strong>`;
+        document.getElementById('oe').innerHTML = `<strong> Email: ${email} </strong>`;
+    }
+    
+    
+</script>
+</html>

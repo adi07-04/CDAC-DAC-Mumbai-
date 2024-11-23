@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus Exercise</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const num1 = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            resolve(10);
+        },3000);
+    });
+    const num2 = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            resolve(20);
+        },5000);
+    });
+
+    var sum = 0;
+
+    num1.then((val)=>{
+        sum=sum+val;
+       
+        num2.then((val)=>{
+        sum=sum+val;
+        console.log(sum);
+        
+         });
+    });
+    
+    
+
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log("Program started");
+
+    const mypromise = new Promise((resolve,reject) =>{
+        setTimeout(()=>{
+            resolve({data:'Hello',Error:'null'});
+        },5000)
+    });
+
+    console.log(mypromise);
+    console.log('Program in progress....');
+    
+    mypromise.then((value)=>{
+        console.log(value);
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve('First promise chain completed');
+            },2000)
+        });
+        
+    }).then((val)=>{
+        console.log(val);
+    });
+
+    mypromise.then((value)=>{
+        console.log(value);
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve('Second promise chain completed')
+            },10000)
+        })
+    }).then(val=>{
+        console.log(val);
+        
+    })
+    
+
+    
+</script>
+</html>

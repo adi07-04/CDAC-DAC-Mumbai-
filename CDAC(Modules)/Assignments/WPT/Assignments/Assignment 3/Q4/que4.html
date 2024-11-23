@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 30px;
+        } 
+    </style>
+</head>
+<body>
+    <h1>Assignment 3 </h1>
+    <h2>Question 1</h2>
+    <p onmouseover="highlight()" onmouseleave="rem()" id="para">Lorem <strong class="bold"> dolor </strong>sit amet consectetur adipisicing elit. Id, aperiam exercitationem, atque nobis molestias explicabo blanditiis rerum corrupti recusandae ipsa, tempore illo voluptatem laboriosam quis odit impedit necessitatibus! Inventore, nisi? <strong class="bold">Lorem</strong>, ipsum dolor <strong class="bold">sit amet </strong>consectetur adipisicing elit.<strong class="bold">Explicabo</strong>  quaerat deserunt cumque vero veniam, est, nisi porro adipisci repudiandae rerum sunt minima accusamus? Cum quo nisi quos <strong class="bold">soluta</strong> eius quis?
+        Lorem ipsum dolor <strong class="bold">sit amet</strong>, consectetur adipiscing elit. Proin suscipit <strong class="bold">ultrices</strong> nunc, nec cursus nisi <strong class="bold">placerat</strong> nec. Donec malesuada <strong class="bold">scelerisque</strong> nulla id facilisis. Sed fermentum <strong class="bold">dictum</strong> justo vel posuere. Cras <strong class="bold">vehicula</strong> lorem in lacus viverra, non fermentum lacus aliquet. Phasellus <strong class="bold">gravida</strong> metus at purus <strong class="bold">faucibus</strong> interdum. Nam <strong class="bold">facilisis</strong> mi eu justo egestas, ac sodales risus <strong class="bold">aliquet</strong>.
+
+    </p>
+</body>
+
+<script>
+    function highlight(){
+        
+        let boldElements = document.getElementsByClassName('bold');
+        for (let i = 0; i < boldElements.length; i++) {
+            boldElements[i].style.color = 'red';
+        }
+       
+    }
+    function rem(){
+        let boldElements = document.getElementsByClassName('bold');
+        for (let i = 0; i < boldElements.length; i++) {
+            boldElements[i].style.color = 'black';
+        }
+    }
+</script>
+</html>

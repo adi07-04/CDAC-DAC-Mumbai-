@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            padding: 60px 10px;
+            gap: 10px;
+            box-shadow: 1px 1px  8px;
+            background-color: white;
+            margin-left: 20px;
+        }
+        h2,h1{
+            margin-left: 20px;
+            
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(243, 243, 183);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Assignment 3 </h1>
+    <h2>Question 3</h2>
+    <div id="container">
+        <label for="city">Select City</label>
+        <select id="city">
+            <option value="Mumbai" id="Mumbai">Mumbai</option>
+            <option value="Pune" id="Pune">Pune</option>
+            <option value="Nashik" id="Nashik">Nashik </option>
+            <option value="New Mumbai" id="New Mumbai" selected>New Mumbai</option>
+            <option value="Hyderabad" id="Hyderabad">Hyderabad</option>
+            <option value="Banglore" id="New Mumbai">Banglore</option>
+        </select>
+        <input type="text" placeholder="Enter city you want to delete" id="inp">
+        <button onclick="del()">Delete</button>
+    </div>
+</body>
+<script>
+    function del(){
+        text = document.getElementById('inp').value;
+        console.log(text);
+        document.getElementById(text).remove();
+    }
+</script>
+
+</html>
