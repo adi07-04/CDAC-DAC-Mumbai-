@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Custom styles for a refined appearance */
+      .navbar {
+        background-color: #9A1750;
+        color: #000;
+      }
+      .navbar h3 {
+        color: #000;
+        font-weight: bold;
+      }
+      .table-container {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      th, td {
+        padding: 12px;
+        text-align: center;
+      }
+      thead th {
+        background-color: #9A1750;
+        color: #000;
+        font-weight: bold;
+        border-bottom: 2px solid #9A1750;
+      }
+      tbody tr {
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s;
+      }
+      /* Light pink hover effect */
+      tbody tr:hover {
+        background-color: #EE4C7C;
+        color: #fff;
+      }
+      .btn-create {
+        background-color: #9A1750;
+        color: black;
+        border: none;
+      }
+      .btn-create:hover {
+        background-color: #EE4C7C;
+      }
+      .btn-action {
+        font-size: 0.9em;
+      }
+    </style>
+    <title>Car Rental Records</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg p-3">
+      <div class="container-fluid d-flex justify-content-between">
+        <h3>Car Rental Records</h3>
+        <a href="/create.html" class="btn btn-create">Create New Record</a>
+      </div>
+    </nav>
+
+    <!-- Main Table Content -->
+    <div class="container my-5">
+      <div class="table-container">
+        <% if (rows.length > 0) { %>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Car Model No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone No</th>
+                <th>Address</th>
+                <th>Pickup Date</th>
+                <th>Return Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% rows.forEach((eachData) => { %>
+                <tr>
+                  <td><%- eachData.car_model_no %></td>
+                  <td><%- eachData.first_name %></td>
+                  <td><%- eachData.last_name %></td>
+                  <td><%- eachData.email %></td>
+                  <td><%- eachData.phone_no %></td>
+                  <td><%- eachData.address %></td>
+                  <td><%- eachData.pickup_date %></td>
+                  <td><%- eachData.return_date %></td>
+                  <td>
+                    <a href="/update-data?id=<%- eachData.id %>" class="btn btn-sm btn-outline-primary btn-action">Edit</a>
+                    <a href="/delete-data?id=<%- eachData.id %>" class="btn btn-sm btn-outline-danger btn-action">Delete</a>
+                  </td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        <% } else { %>
+          <div class="text-center my-5">
+            <h4 class="text-muted">No Data Found</h4>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
